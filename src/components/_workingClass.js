@@ -1,3 +1,4 @@
+import React from 'react';
 
 class AppComponent extends React.Component {
   constructor(props) {
@@ -22,3 +23,5 @@ AppComponent.propTypes = { initialCount: React.PropTypes.number };
 AppComponent.defaultProps = { initialCount: 0 };
 
 export default AppComponent;
+
+//to pass in props <AppRoot protein={['chicken', 'beef']}/>

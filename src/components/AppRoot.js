@@ -1,5 +1,6 @@
 import React from 'react';
-//import Input from 'components/input'
+import Meal from 'components/Meal'
+//import FoodPicker from 'components/foodpicker';
 
 class AppRoot extends React.Component {
   constructor(props) {
@@ -17,8 +18,26 @@ class AppRoot extends React.Component {
   }
   render() {
     return (
-      <div className='container'>
-        Test Count { this.state.carbs[2] }
+      <div className="container">
+        <div className="row">
+          <Meal mealName="El Desayuno" carbList={this.state.carbs}
+          proteinList={this.state.protein} />
+        </div>
+        <br /><br />
+        <div className="row">
+          <Meal mealName="El Lunch" carbList={this.state.carbs}
+          proteinList={this.state.protein} />
+        </div>
+        <br /><br />
+        <div className="row">
+          <Meal mealName="La Cena" carbList={this.state.carbs}
+          proteinList={this.state.protein} />
+        </div>
+        <br /><br />
+        <div className="row">
+          <Meal mealName="La Merienda" carbList={this.state.carbs}
+          proteinList={this.state.protein} />
+        </div>
       </div>
     );
   }
@@ -26,13 +45,11 @@ class AppRoot extends React.Component {
 
 AppRoot.propTypes = {
   carbs: React.PropTypes.array,
-  protein: React.PropTypes.array,
   test: React.PropTypes.number
 };
 AppRoot.defaultProps = {
   carbs: ['pasta', 'oatmeal', 'Lucky Charms'],
-  protein: ['chicken', 'beef'],
-  test: 20
+  protein: ['pork', 'chicken', 'bison']
 };
 
 export default AppRoot;

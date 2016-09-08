@@ -1,12 +1,22 @@
+import React from 'react';
+
 class FoodPicker extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      foods: props.foods
+    }
+
+    this.selectFood = this.props.selectFood.bind(this);
+  }
   render() {
-    var selectFood = this.props.selectFood;
-    var foodList = this.props.foods.map(function(food) {
+    let selectFood = this.props.selectFood;
+    let foodList = this.props.foods.map(function(food, i) {
       return (
-        <li><a onClick={selectFood} value={food}>{food}</a></li>
+        <li key={i}><a onClick={selectFood} value={food}>{food}</a></li>
       );
     });
-    
+
     return (
       <div className='dropdown'>
         <button className='btn btn-default dropdown-toggle' type='button' id='dropdownMenu1' data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>
@@ -19,5 +29,13 @@ class FoodPicker extends React.Component {
     );
   }
 }
+
+FoodPicker.propTypes = {
+  foods: React.PropTypes.array
+};
+
+FoodPicker.defaultProps = {
+  foods: ['hot', 'dog']
+};
 
 export default FoodPicker;
