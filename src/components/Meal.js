@@ -18,11 +18,12 @@ class Meal extends React.Component {
     this.setState({
       selectedCarbs: [e.target.value]
     });
+    //console.log('test: ' + e)
   }
   selectProtein(e){
-    this.setState({
-      selectedProteins: [e.target.value]
-    });
+    /*this.setState({
+      selectedProteins: [e]
+    });*/
   }
   render() {
     return (

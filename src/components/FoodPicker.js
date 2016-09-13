@@ -4,7 +4,7 @@ class FoodPicker extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      foods: props.foods
+      //foods: props.foods
     }
 
     this.selectFood = this.props.selectFood.bind(this);
@@ -14,6 +14,7 @@ class FoodPicker extends React.Component {
     let foodList = this.props.foods.map(function(food, i) {
       return (
         <li key={i}><a onClick={selectFood} value={food}>{food}</a></li>
+        //<li key={i}><a onClick={selectFood.bind(this, i, this.props)} value={food}>{food}</a></li>
       );
     });
 
@@ -30,12 +31,5 @@ class FoodPicker extends React.Component {
   }
 }
 
-FoodPicker.propTypes = {
-  foods: React.PropTypes.array
-};
-
-FoodPicker.defaultProps = {
-  foods: ['hot', 'dog']
-};
 
 export default FoodPicker;
